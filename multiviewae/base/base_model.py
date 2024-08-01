@@ -105,7 +105,7 @@ class BaseModelAE(ABC, pl.LightningModule):
         self.save_hyperparameters()
 
     ################################            public methods
-    def fit(self, *data, labels=None, max_epochs=None, batch_size=None, cfg=None):
+    def fit(self, *data, labels=None, split_labels=None, max_epochs=None, batch_size=None, cfg=None):
         if cfg is not None:
             new_cfg = omegaconf.OmegaConf.load(cfg)
             self.__initcfg(self.cfg, new_cfg, at_fit=True)
